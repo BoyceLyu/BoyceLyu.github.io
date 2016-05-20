@@ -7,19 +7,17 @@ tags: vNext
 
 #IViewLocationExpander
 在MVC6中，存在一个新的接口[IViewLocationExpander](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNet.Mvc.Razor/IViewLocationExpander.cs),包含两个方法来定义Razor视图引擎怎样访问文件。以下就来介绍下这两个方法的含义：
-	
+{% codeblock lang:csharp  %}
     void PopulateValues(ViewLocationExpanderContext context); 
-
-	IEnumerable<string> ExpandViewLocations(
-            ViewLocationExpanderContext context,
-            IEnumerable<string> viewLocations);
+    IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context,IEnumerable<string> viewLocations);
+{% endcodeblock %}
 
 
 现在我们来创建一个例子来学习以下如何使用这个接口,创建继承IViewLocationExpander的类
 {% codeblock lang:csharp  %}
-	public class MySharedLocationRemapper:IViewLocationExpander
+    public class MySharedLocationRemapper:IViewLocationExpander
     {
-        #region Implementation of IViewLocationExpander
+        #region Implementation of IViewLocationExpander 
 
         public void PopulateValues(ViewLocationExpanderContext context)
         {
@@ -42,11 +40,10 @@ tags: vNext
 
 
 {% codeblock lang:csharp  %}
-	services.AddMvc();
- 
+    services.AddMvc(); 
     services.Configure<RazorViewEngineOptions>(o =>
     {
-        o.ViewLocationExpanders.Add(typeof(MySharedLocationRemapper));
+       o.ViewLocationExpanders.Add(typeof(MySharedLocationRemapper));
     });
 {% endcodeblock %}
 
