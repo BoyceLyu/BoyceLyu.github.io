@@ -1,6 +1,7 @@
 title: "Hexo 创建GitHub Pages Blog"
 date: 2015-05-14 21:16:55
 tags: 关于本blog
+description: 本篇教程介绍怎么在github创建自己免费的静态blog.
 ---
 本篇教程介绍怎么在github创建自己免费的静态blog.
 

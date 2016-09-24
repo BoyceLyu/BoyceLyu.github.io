@@ -1,6 +1,7 @@
 title: "asp.net mvc6 中修改View路径"
 date: 2015-05-25 23:16:55
 tags: vNext
+description: Mvc6中替换IViewLocationExpander修改View路径.
 ---
 
 在mvc6之前，我们如果想设置视图的位置需要继承[RazorViewEngine](http://www.hanselman.com/blog/ABetterASPNETMVCMobileDeviceCapabilitiesViewEngine.aspx)来改变查找View的默认情况, 现在mvc6中可以很容易的修改或者扩展视图路径，而不依赖于扩展`RazorViewEngine`.
